@@ -3,4 +3,5 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Home</h1>
+    <asp:GridView ID="dgvArticulos" runat="server" CssClass="table"></asp:GridView>
 </asp:Content>
