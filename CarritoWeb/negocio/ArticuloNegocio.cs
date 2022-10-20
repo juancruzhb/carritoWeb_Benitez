@@ -54,6 +54,7 @@ namespace negocio
 
                     throw;
                 }
+                finally { conexion.Close(); }
             }
 
 

@@ -27,10 +27,7 @@
                             <a class="nav-link" href="#">Carrito</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Mis compras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Administrar</a>
+                            <a class="nav-link">Administrar</a>
                         </li>
                     </ul>
                 </div>
