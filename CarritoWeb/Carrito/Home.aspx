@@ -11,7 +11,7 @@
             <asp:Button ID="btbBuscarMC" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
             <asp:Label ID="Label2" runat="server" Text="Label">Busqueda: </asp:Label>
             <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged ="txtBuscar_TextChanged"></asp:TextBox>
-            <asp:Button ID="Button2" runat="server" Text="Buscar" CssClass="btn btn-primary" />
+            <asp:Button ID="Button2" runat="server" Text="Buscar" CssClass="btn btn-primary"  />
 
         </div>
     </div>
