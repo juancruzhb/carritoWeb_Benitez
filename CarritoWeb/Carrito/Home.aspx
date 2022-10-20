@@ -4,11 +4,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
-        <h2>Aca van las categorias, marcas y filtros</h2>
         <div class="btn-group" >
             <asp:DropDownList ID="ddlCategorias" runat="server" CssClass="form-control">
             </asp:DropDownList>
             <asp:DropDownList ID="ddlMarcas" runat="server"></asp:DropDownList>
+            <asp:Button ID="btbBuscarMC" runat="server" Text="Filtrar" CssClass="btn btn-primary" />
+            <asp:Label ID="Label2" runat="server" Text="Label">Busqueda: </asp:Label>
+            <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged ="txtBuscar_TextChanged"></asp:TextBox>
+            <asp:Button ID="Button2" runat="server" Text="Buscar" CssClass="btn btn-primary" />
+
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-5 g-4">

@@ -38,5 +38,33 @@ namespace Carrito
 
 
         }
+
+
+
+        protected void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            buscar();
+
+        }
+
+
+
+        private void buscar() {
+            List<Articulo> articulosFiltrados = new List<Articulo>();
+            string filtro = txtBuscar.Text;
+
+            if (filtro.Length >= 3)
+            {
+                articulosFiltrados = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.oMarca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.oCategoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                articulosFiltrados = listaArticulos;
+            }
+
+            repRepeater.DataSource = null;
+            repRepeater.DataSource = articulosFiltrados;
+            repRepeater.DataBind();
+        }
     }
 }
