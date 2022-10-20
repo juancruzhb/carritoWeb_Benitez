@@ -3,21 +3,22 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <asp:Repeater ID="repRepeater" runat="server">
-        <ItemTemplate>
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+        <asp:Repeater ID="repRepeater" runat="server">
+            <ItemTemplate>
                 <div class="col">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                    <div class="card h-30">
+                        <img src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="..." " >
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                            <p class="card-text"><%#Eval("Descripcion") %></p>
+                            <a href="DetalleProducto.aspx?id=<%#Eval("IdArticulo") %>">Añadir al carrito</a>
                         </div>
                     </div>
                 </div>
 
-        </ItemTemplate>
+            </ItemTemplate>
 
-    </asp:Repeater>
-
+        </asp:Repeater>
+    </div>
 </asp:Content>

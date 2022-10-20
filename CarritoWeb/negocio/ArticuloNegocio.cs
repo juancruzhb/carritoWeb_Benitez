@@ -28,7 +28,7 @@ namespace negocio
                     {
                         productos.Add(new Articulo()
                         {
-                            IdProducto = (int)reader["Id"],
+                            IdArticulo = (int)reader["Id"],
                             Codigo = (string)reader["codigo"],
                             Nombre = (string)reader["nombre"],
                             Descripcion = (string)reader["descripcion"],
