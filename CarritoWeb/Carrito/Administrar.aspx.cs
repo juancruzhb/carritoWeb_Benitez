@@ -16,6 +16,7 @@ namespace Carrito
         List<Marca> marcas = new List<Marca>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             ArticuloNegocio negocio = new ArticuloNegocio();
             articulos = negocio.listar();
 
@@ -27,19 +28,21 @@ namespace Carrito
 
             marcas = marcaNegocio.listar();
             categorias = categoriaNegocio.listar();
+            if (!IsPostBack)
+            {
+                ddlMarca.DataSource = marcas;
+                ddlMarca.DataTextField = "Descripcion";
+                ddlMarca.DataValueField = "IdMarca";
+                ddlMarca.DataBind();
+                ddlMarca.Items.Insert(0, new ListItem("--Marca--", "0"));
 
-            ddlMarca.DataSource = marcas;
-            ddlMarca.DataTextField = "Descripcion";
-            ddlMarca.DataValueField = "IdMarca";
-            ddlMarca.DataBind();
-            ddlMarca.Items.Insert(0, new ListItem("--Marca--", "0"));
 
-
-            ddlCategoria.DataSource = categorias;
-            ddlCategoria.DataTextField = "Descripcion";
-            ddlCategoria.DataValueField = "IdCategoria";
-            ddlCategoria.DataBind();
-            ddlCategoria.Items.Insert(0, new ListItem("--Categoria--", "0"));
+                ddlCategoria.DataSource = categorias;
+                ddlCategoria.DataTextField = "Descripcion";
+                ddlCategoria.DataValueField = "IdCategoria";
+                ddlCategoria.DataBind();
+                ddlCategoria.Items.Insert(0, new ListItem("--Categoria--", "0"));
+            }
 
         }
 
@@ -47,14 +50,22 @@ namespace Carrito
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+
             Articulo articulo = new Articulo()
             {
                 Nombre = txtNombre.Text,
                 Codigo = txtCodigo.Text,
                 Descripcion = txtDescripcion.Text,
-                UrlImagen = txtUrlImagen.Text
+                UrlImagen = txtUrlImagen.Text,
+                Precio = Convert.ToDouble(txtPrecio.Text),
+                oMarca = marcas.Find(x => x.IdMarca.Equals(int.Parse((ddlMarca.SelectedValue)))),
+                oCategoria = categorias.Find(x => x.IdCategoria.Equals(int.Parse(ddlCategoria.SelectedValue)))
 
             };
+
+    
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            negocio.agregarNuevoArticulo(articulo);
     }
     }
 }

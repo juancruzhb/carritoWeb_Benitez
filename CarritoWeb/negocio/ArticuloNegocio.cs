@@ -63,6 +63,39 @@ namespace negocio
 
                 return productos;
         }
+        public void agregarNuevoArticulo(Articulo articulo)
+        { 
+            //TODO: retornar otro valor para confirmar si se agregó correctamente
+
+            using(SqlConnection conexion = new SqlConnection(Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_agregarNuevoArticulo", conexion);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("Nombre", articulo.Nombre);
+                    cmd.Parameters.AddWithValue("Codigo", articulo.Codigo);
+                    cmd.Parameters.AddWithValue("Descripcion", articulo.Descripcion);
+                    cmd.Parameters.AddWithValue("IdMarca", articulo.oMarca.IdMarca);
+                    cmd.Parameters.AddWithValue("IdCategoria", articulo.oCategoria.IdCategoria);
+                    cmd.Parameters.AddWithValue("Precio", articulo.Precio);
+                    cmd.Parameters.AddWithValue("ImagenUrl", articulo.UrlImagen);
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally { conexion.Close(); }
+            }
+
+
+        }
+
     
     }
 }

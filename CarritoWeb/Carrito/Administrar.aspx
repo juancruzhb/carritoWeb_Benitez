@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Administrar.aspx.cs" Inherits="Carrito.Administrar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Administrar.aspx.cs" Inherits="Carrito.Administrar" EnableViewState="true"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -33,16 +33,16 @@
                                 <asp:DropDownList ID="ddlCategoria" runat="server"></asp:DropDownList>
                             </div>
                             <div>
-                                <asp:Label Text="Descripcion: " runat="server" ID="txtDescripcion" />
-                                <asp:TextBox runat="server" />
+                                <asp:Label Text="Descripcion: " runat="server"  />
+                                <asp:TextBox ID="txtDescripcion" runat="server" />
                             </div>
                             <div>
-                                <asp:Label Text="Precio: " runat="server" ID="txtPrecio" />
-                                <asp:TextBox runat="server" />
+                                <asp:Label Text="Precio: " runat="server"  />
+                                <asp:TextBox runat="server" ID="txtPrecio"/>
                             </div>
                             <div>
-                                <asp:Label Text="UrlImagen: " runat="server" ID="txtUrlImagen"/>
-                                <asp:TextBox runat="server" />
+                                <asp:Label Text="UrlImagen: " runat="server" />
+                                <asp:TextBox runat="server" ID="txtUrlImagen" />
                             </div>
 
                         </div>

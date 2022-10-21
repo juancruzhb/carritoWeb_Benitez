@@ -15,7 +15,6 @@ namespace dominio
         public double Precio { get; set; }
         public string UrlImagen { get; set; }
         public bool Activo { get; set; }
-        
         public Categoria oCategoria { get; set; }
         public Marca oMarca { get; set; }
     }
