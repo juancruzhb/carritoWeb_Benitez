@@ -14,8 +14,8 @@
                     <p class="card-text"><%#Eval("Descripcion") %></p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Marca: <%#Eval("oMarca") %></li>
-                    <li class="list-group-item">Descripcion: <%#Eval("oCategoria") %></li>
+                    <li class="list-group-item">Marca: <%#Eval("oMarca.Descripcion") %></li>
+                    <li class="list-group-item">Descripcion: <%#Eval("oCategoria.Descripcion") %></li>
                     <li class="list-group-item">Precio: <%#Eval("Precio") %></li>
                 </ul>
                 <div class="card-body">

@@ -27,6 +27,12 @@
                                 <asp:TextBox runat="server" ID="txtNombre"/>
                             </div>
                             <div>
+                                <asp:DropDownList ID="ddlMarca" runat="server"></asp:DropDownList>
+                            </div>
+                             <div>
+                                <asp:DropDownList ID="ddlCategoria" runat="server"></asp:DropDownList>
+                            </div>
+                            <div>
                                 <asp:Label Text="Descripcion: " runat="server" ID="txtDescripcion" />
                                 <asp:TextBox runat="server" />
                             </div>

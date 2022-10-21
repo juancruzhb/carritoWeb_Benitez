@@ -12,6 +12,8 @@ namespace Carrito
     public partial class Administrar : System.Web.UI.Page
     {
         List<Articulo> articulos = new List<Articulo>();
+        List<Categoria> categorias = new List<Categoria>();
+        List<Marca> marcas = new List<Marca>();
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
@@ -19,6 +21,25 @@ namespace Carrito
 
             gvArticulos.DataSource = articulos;
             gvArticulos.DataBind();
+
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+
+            marcas = marcaNegocio.listar();
+            categorias = categoriaNegocio.listar();
+
+            ddlMarca.DataSource = marcas;
+            ddlMarca.DataTextField = "Descripcion";
+            ddlMarca.DataValueField = "IdMarca";
+            ddlMarca.DataBind();
+            ddlMarca.Items.Insert(0, new ListItem("--Marca--", "0"));
+
+
+            ddlCategoria.DataSource = categorias;
+            ddlCategoria.DataTextField = "Descripcion";
+            ddlCategoria.DataValueField = "IdCategoria";
+            ddlCategoria.DataBind();
+            ddlCategoria.Items.Insert(0, new ListItem("--Categoria--", "0"));
 
         }
 
