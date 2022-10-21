@@ -11,7 +11,17 @@ namespace Carrito
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Request.QueryString["IdArticulo"]))
+            {
+                int id = int.Parse(Request.QueryString["IdArticulo"]);
+
+            }
+            if (!IsPostBack)
+            {
+
+            }
 
         }
+
     }
 }

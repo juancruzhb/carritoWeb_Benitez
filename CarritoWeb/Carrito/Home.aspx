@@ -12,8 +12,8 @@
             <asp:Label ID="Label2" runat="server" Text="Label">Busqueda: </asp:Label>
             <asp:TextBox ID="txtBuscar" runat="server" OnTextChanged ="txtBuscar_TextChanged"></asp:TextBox>
             <asp:Button ID="Button2" runat="server" Text="Buscar" CssClass="btn btn-primary"  />
-
         </div>
+        <hr />
     </div>
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <asp:Repeater ID="repRepeater" runat="server">
@@ -26,7 +26,7 @@
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <asp:Label ID="Label1" runat="server" >$ <%#Eval("Precio") %></asp:Label>
                             <div class="d-flex justify-content-lg-start">
-                             <a href="Carrito.aspx">Agregar al carrito</a>
+                             <a href="Carrito.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Agregar al carrito</a>
                             </div>
                              <div class="d-flex justify-content-lg-start">
                                 <a href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>
