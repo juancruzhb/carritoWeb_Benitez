@@ -27,7 +27,7 @@
                             <a class="nav-link" href="#">Carrito</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">Administrar</a>
+                            <a class="nav-link" href="Administrar.aspx">Administrar</a>
                         </li>
                     </ul>
                 </div>

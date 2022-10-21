@@ -6,7 +6,9 @@
     <asp:Repeater ID="pdRepeater" runat="server">
         <ItemTemplate>
             <div class="card" style="width: 40rem; margin: 0 auto">
-                <img src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="...">
+                <div style="margin: 0 auto">
+                    <img src="<%#Eval("UrlImagen") %>" class="card-img-top" alt="..." style="width:20rem">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title"><%#Eval("Nombre") %></h5>
                     <p class="card-text"><%#Eval("Descripcion") %></p>
