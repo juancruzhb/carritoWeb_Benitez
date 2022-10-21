@@ -10,6 +10,7 @@ namespace dominio
     {
         public int IdCarrito { get; set; }
         public Articulo oProducto { get; set; }
+        public int Cantidad { get; set; }
         public Usuario oUsuario { get; set; }
     }
 }

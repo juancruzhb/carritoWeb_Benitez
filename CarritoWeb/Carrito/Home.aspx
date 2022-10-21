@@ -25,8 +25,11 @@
                             <h5 class="card-title"><%#Eval("Nombre") %></h5>
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <asp:Label ID="Label1" runat="server" >$ <%#Eval("Precio") %></asp:Label>
-                            <div class="d-flex justify-content-center">
-                                <asp:Button ID="Button1" runat="server" Text="Añadir al Carrito" CssClass="btn btn-primary" />  
+                            <div class="d-flex justify-content-lg-start">
+                             <a href="Carrito.aspx">Agregar al carrito</a>
+                            </div>
+                             <div class="d-flex justify-content-lg-start">
+                                <a href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>
                             </div>
                         </div>
                     </div>
