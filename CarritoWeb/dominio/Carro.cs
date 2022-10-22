@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace dominio
 {
-    public class Carrito
+    public class Carro
     {
         public int IdCarrito { get; set; }
-        public Articulo oProducto { get; set; }
+        public Articulo oArticulo { get; set; }
         public int Cantidad { get; set; }
-        public Usuario oUsuario { get; set; }
+        //public Usuario oUsuario { get; set; }
     }
 }
