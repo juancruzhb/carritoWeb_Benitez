@@ -10,6 +10,7 @@ namespace Carrito
 {
     public partial class Home : System.Web.UI.Page
     {
+        public List<Carro> carrito = new List<Carro>();
         public List<Articulo> listaArticulos { get; set; }
         public List<Categoria> listaCategorias{ get; set; }
         public List<Marca> listaMarcas{ get; set; }
@@ -66,5 +67,6 @@ namespace Carrito
             repRepeater.DataSource = articulosFiltrados;
             repRepeater.DataBind();
         }
+
     }
 }

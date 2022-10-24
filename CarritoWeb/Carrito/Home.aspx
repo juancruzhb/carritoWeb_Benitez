@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Carrito.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Carrito.Home" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -26,7 +26,8 @@
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <asp:Label ID="Label1" runat="server" >$ <%#Eval("Precio") %></asp:Label>
                             <div class="d-flex justify-content-lg-start">
-                             <a href="Carrito.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Agregar al carrito</a>
+                                <asp:LinkButton Text="Agregar al carrito" ID="lbAgregarAcarrito" runat="server" OnClick="lbAgregarAcarrito_Click"/>
+                             <%--<a href="Carrito.aspx?IdArticulo=<%#Eval("IdArticulo") %>" onclick='agregarCarrito()'>Agregar al carrito</a>--%>
                             </div>
                              <div class="d-flex justify-content-lg-start">
                                 <a href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>

@@ -26,6 +26,7 @@ namespace Carrito
             if (!string.IsNullOrEmpty(Request.QueryString["IdArticulo"]))
             {
                 int id = int.Parse(Request.QueryString["IdArticulo"]);
+
                 nuevoCarro = carroPorId(id);
                 //Get previous values
                 if (Session["data"] != null)
@@ -109,7 +110,10 @@ namespace Carrito
 
         protected void dgCarrito_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idArticuloSeleccionado = Convert.ToInt32(dgCarrito.SelectedRow.Cells[0].Text);
+
+
+            int idArticuloSeleccionado =Convert.ToInt32( dgCarrito.SelectedRow.Cells[0].Text);
+
 
             carritos.RemoveAll(x => x.oArticulo.IdArticulo == idArticuloSeleccionado);
 
@@ -129,5 +133,8 @@ namespace Carrito
             }
             lblPrecio.Text = precio.ToString();
         }
+
     }
+
+
 }
