@@ -12,7 +12,8 @@ namespace Carrito
     public partial class Carrito : System.Web.UI.Page
     {
 
-        List<Carro> carritos = new List<Carro>();
+         List<Carro> carritos = new List<Carro>();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,8 +44,9 @@ namespace Carrito
                 }
                 Session["data"] = carritoCompra;
 
-                dgCarrito.DataSource = carritoCompra;
-                dgCarrito.DataBind();
+                carritos = carritoCompra;
+
+                cargarGrilla();
             }
             if (Session["data"] != null)
             {
@@ -54,10 +56,10 @@ namespace Carrito
             }
 
             Session["data"] = carritoCompra;
+            carritos = carritoCompra;
 
-            dgCarrito.DataSource = carritoCompra;
-            dgCarrito.DataBind();
 
+            cargarGrilla();
 
         }
 
@@ -101,6 +103,25 @@ namespace Carrito
                 
             }
             return false;
+        }
+
+
+
+        protected void dgCarrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idArticuloSeleccionado = Convert.ToInt32(dgCarrito.SelectedRow.Cells[0].Text);
+
+            carritos.RemoveAll(x => x.oArticulo.IdArticulo == idArticuloSeleccionado);
+
+            cargarGrilla();
+           
+ 
+        }
+
+        private void cargarGrilla()
+        {
+            dgCarrito.DataSource = carritos;
+            dgCarrito.DataBind();
         }
     }
 }
