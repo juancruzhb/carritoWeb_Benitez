@@ -9,7 +9,7 @@
         <hr />
         <asp:GridView runat="server" ID="dgCarrito" CssClass="table" AutoGenerateColumns="false"  OnSelectedIndexChanged="dgCarrito_SelectedIndexChanged" >
             <Columns>
-                <asp:BoundField HeaderText="Id" DataField="oArticulo.IdArticulo" Visible="true" />
+                <asp:BoundField HeaderText="Id" DataField="oArticulo.IdArticulo" Visible="false" />
                 <asp:BoundField HeaderText="Producto" DataField="oArticulo.Nombre" />
                 <asp:BoundField HeaderText="Descripcion" DataField="oArticulo.Descripcion" />
                 <asp:BoundField HeaderText="Marca" DataField="oArticulo.oMarca.Descripcion" />
@@ -18,6 +18,11 @@
                 <asp:CommandField ShowSelectButton ="true" SelectText="Eliminar" HeaderText="Accion" />
             </Columns>
         </asp:GridView>
+        <div class="align-content-center">
+
+            <asp:Label Text="Total a pagar: " runat="server" Id="lblTotal"/>
+            <asp:Label Text="$" runat="server" Id="lblPrecio"/>
+        </div>
         <div class="container">
             <asp:Button Text="Finaliza compra" CssClass="btn btn-primary" runat="server" />
         </div>

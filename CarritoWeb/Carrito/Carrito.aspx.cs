@@ -122,6 +122,12 @@ namespace Carrito
         {
             dgCarrito.DataSource = carritos;
             dgCarrito.DataBind();
+            double precio = 0;
+            foreach (var item in carritos)
+            {
+                precio += item.Cantidad * item.oArticulo.Precio;
+            }
+            lblPrecio.Text = precio.ToString();
         }
     }
 }
