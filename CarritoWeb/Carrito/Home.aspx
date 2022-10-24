@@ -26,9 +26,10 @@
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <asp:Label ID="Label1" runat="server" >$ <%#Eval("Precio") %></asp:Label>
                             <div class="d-flex justify-content-lg-start">
-                                <asp:LinkButton Text="Agregar al carrito" ID="lbAgregarAcarrito" runat="server" OnClick="lbAgregarAcarrito_Click"/>
-                             <%--<a href="Carrito.aspx?IdArticulo=<%#Eval("IdArticulo") %>" onclick='agregarCarrito()'>Agregar al carrito</a>--%>
-                            </div>
+                                <asp:LinkButton Text="Agregar a Carrito" CssClass="btn btn-primary" ID="lbAgregar_a_Carrito" CommandName="IdArticulo" CommandArgument='<%#Eval("IdArticulo")%>' runat="server" OnCommand="lbAgregar_a_Carrito_Command" />
+                                                   
+                             <%--<a href="Carrito.aspx?IdArticulo=<%#Eval("IdArticulo") %>" onclick='agregarCarrito()'>Agregar al carrito</a>
+                            --%></div>
                              <div class="d-flex justify-content-lg-start">
                                 <a href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>
                             </div>

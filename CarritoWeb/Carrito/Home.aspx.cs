@@ -68,5 +68,59 @@ namespace Carrito
             repRepeater.DataBind();
         }
 
+        protected void lbAgregar_a_Carrito_Command(object sender, CommandEventArgs e)
+        {
+            if (Session["listaDeArticulosAgregados"] != null)
+                carrito = (List<Carro>)Session["listaDeArticulosAgregados"];
+
+            int idArticulo = Convert.ToInt32( e.CommandArgument.ToString());
+
+            Carro aux = new Carro();
+            aux = carroPorId(idArticulo);
+
+            if (estaEnCarrito(aux, carrito))
+            {
+                foreach (var item in carrito.Where(x => x.oArticulo.IdArticulo == idArticulo))
+                    item.Cantidad++;
+            }
+            else
+            {
+                carrito.Add(aux);
+            }
+
+            Session["listaDeArticulosAgregados"] = carrito;
+            
+        }
+
+        private Carro carroPorId(int id)
+        {
+            Articulo aux = new Articulo();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> articulos = new List<Articulo>();
+            articulos = negocio.listar();
+
+            aux = articulos.Find(x => x.IdArticulo == id);
+
+            Carro carro = new Carro()
+            {
+                oArticulo = aux,
+                Cantidad = 1
+            };
+
+            return carro;
+        }
+
+        private bool estaEnCarrito(Carro carro, List<Carro> lista)
+        {
+            foreach (var item in lista)
+            {
+                if (lista.Any(x => x.oArticulo.IdArticulo == carro.oArticulo.IdArticulo))
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
     }
 }
