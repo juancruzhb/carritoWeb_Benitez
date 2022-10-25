@@ -89,7 +89,12 @@ namespace Carrito
             }
 
             Session["listaDeArticulosAgregados"] = carrito;
-            
+
+            string message = "Se ha agregado el articulo a la lista. Vaya al carrito para finalizar la compra";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
 
         private Carro carroPorId(int id)
@@ -122,5 +127,9 @@ namespace Carrito
             }
             return false;
         }
+
+
     }
+
+
 }
