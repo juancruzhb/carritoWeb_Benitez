@@ -13,17 +13,15 @@
                 <asp:BoundField HeaderText="Producto" DataField="oArticulo.Nombre" />
                 <asp:BoundField HeaderText="Descripcion" DataField="oArticulo.Descripcion" />
                 <asp:BoundField HeaderText="Marca" DataField="oArticulo.oMarca.Descripcion" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:LinkButton Text=" - " ID="btnSuprimir" CssClass="btn btn-danger" CommandName="IdArticulo" CommandArgument='<%#Eval("oArticulo.IdArticulo") %>' runat="server" OnCommand="btnSuprimir_Command" />
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <asp:DropDownList ID="ddlCantidad" runat="server" >
-                            <asp:ListItem>1</asp:ListItem>
-                            <asp:ListItem>2</asp:ListItem>
-                            <asp:ListItem>3</asp:ListItem>
-                            <asp:ListItem>4</asp:ListItem>
-                            <asp:ListItem>5</asp:ListItem>
-                            <asp:ListItem>6</asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:LinkButton Text=" + " ID="btnSumar" CssClass="btn btn-success" CommandName="IdArticulo" CommandArgument='<%#Eval("oArticulo.IdArticulo") %>' runat="server" OnCommand="btnSumar_Command" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Precio" DataField="oArticulo.Precio" />
