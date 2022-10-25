@@ -90,6 +90,7 @@ namespace Carrito
 
             Session["listaDeArticulosAgregados"] = carrito;
 
+
             string message = "Se ha agregado el articulo a la lista. Vaya al carrito para finalizar la compra";
             string script = "window.onload = function(){ alert('";
             script += message;

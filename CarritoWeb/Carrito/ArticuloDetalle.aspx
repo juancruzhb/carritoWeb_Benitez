@@ -19,8 +19,8 @@
                     <li class="list-group-item">Precio: <%#Eval("Precio") %></li>
                 </ul>
                 <div class="card-body">
-                    <a href="Home.aspx" class="card-link">Seguir Comprando</a>
-                    <a href="#" class="card-link">Agregar al Carrito</a>
+                    <a  href="Home.aspx" class="btn btn-secondary btn-lg">Seguir Comprando</a>
+                    <a href="#" class="btn btn-primary btn-lg">Agregar al Carrito</a>
                 </div>
             </div>
         </ItemTemplate>

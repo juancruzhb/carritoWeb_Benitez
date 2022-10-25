@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
@@ -28,10 +27,12 @@
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <asp:Label ID="Label1" runat="server" >$ <%#Eval("Precio") %></asp:Label>
                             <div class="d-flex justify-content-lg-start">
-                                <asp:LinkButton Text="Agregar a Carrito" CssClass="btn btn-primary" ID="lbAgregar_a_Carrito" CommandName="IdArticulo" CommandArgument='<%#Eval("IdArticulo")%>' runat="server" OnCommand="lbAgregar_a_Carrito_Command" />
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                <asp:LinkButton Text="Agregar a Carrito" CssClass="btn btn-primary"  ID="lbAgregar_a_Carrito" CommandName="IdArticulo" CommandArgument='<%#Eval("IdArticulo")%>' runat="server" OnCommand="lbAgregar_a_Carrito_Command" />
+                                <a class="btn btn-primary" href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>
+                                </div>
                             </div>
                              <div class="d-flex justify-content-lg-start">
-                                <a href="ArticuloDetalle.aspx?IdArticulo=<%#Eval("IdArticulo") %>">Ver detalles</a>
                             </div>
                         </div>
                     </div>
